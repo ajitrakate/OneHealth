@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container-fluid px-4">
+            <h1 class="mt-4">Book an appointment</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Book an appointment</li>
+            </ol>
+        </div>
+        <div class='container m-2'>
+        <form action="{% url 'book' %}" method="GET">
+            <div class="mb-3">
+              <label for="doctorName" class="form-label">Doctor</label>
+              <input type="text" class="form-control disabled" id="doctorName" name="doctorName" value={{username}} disabled>
+            </div>
+            <div class="mb-3">
+              <input type="hidden" class="form-control" id="doctorName" name="doctorId" value={{id}}>
+            </div>
+            <div class="mb-3">
+              <label for="date" class="form-label">Date</label>
+              <input type="date" class="form-control" id="exampleInputEmail1" name="date" required>
+            </div>
+            <div class="mb-3">
+              <label for="desc" class="form-label">Description</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" name="desc" required>
+            </div>
+            
+            <button type="Submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+    </main>
+</div>
+{% endblock %}
